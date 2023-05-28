@@ -7,8 +7,8 @@ import {ActiveLink, Container} from "@/components";
 const Header = () => {
     return (
         <header>
-            <div className="bg-white dark:bg-black dark:text-white border-b dark:border-b-black text-[11px] tracking-wider">
-                <Container className="flex justify-between py-2 px-2 sm:px-0">
+            <div className="bg-black dark:bg-white text-white dark:text-black border-b-black dark:border-b-white text-[11px] tracking-wider">
+                <Container className="flex flex-col sm:flex-row items-center sm:justify-between space-y-2 sm:space-y-0 py-2 px-2 sm:px-0">
                     <div className="flex-1 space-x-7">
                         <a href="mailto:m.sabah.farhadi@gmail.com"
                            className="hover:underline">m.sabah.farhadi@gmail.com</a>
@@ -34,14 +34,14 @@ const Header = () => {
                 </Container>
             </div>
             <Container>
-                <nav className="flex items-center">
-                    <Link href="/" className="mt-4 mr-9">LOGO</Link>
-                    <ul className="flex">
-                        <li className="h-fit">
-                            <ActiveLink href="/" linkClass="flex h-full px-4 pb-4 pt-8" activeClass="bg-red-500 text-white">Home</ActiveLink>
+                <nav className="flex items-center dark:text-white">
+                    <Link href="/" className="mr-9">LOGO</Link>
+                    <ul className="flex h-20">
+                        <li className="flex h-full">
+                            <ActiveLink href="/" linkClass="flex items-end h-full px-4 pb-3" activeClass="bg-red-500 text-white">Home</ActiveLink>
                         </li>
-                        <li className="h-fit">
-                            <ActiveLink href="/books" linkClass="flex h-full px-4 pb-4 pt-8" activeClass="bg-red-500 text-white">Books</ActiveLink>
+                        <li className="flex h-full">
+                            <ActiveLink href="/books" linkClass="flex items-end h-full px-4 pb-3" activeClass="bg-red-500 text-white">Books</ActiveLink>
                         </li>
                     </ul>
                     <div className="ml-auto">

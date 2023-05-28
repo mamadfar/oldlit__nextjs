@@ -1,4 +1,5 @@
 import {FC, ReactNode} from 'react';
+import {Container} from "@/components";
 
 interface IContentProps {
     children: ReactNode;
@@ -6,8 +7,10 @@ interface IContentProps {
 
 const Content:FC<IContentProps> = ({children}) => {
     return (
-        <main>
-            {children}
+        <main className="dark:text-white">
+            <Container className="py-3">
+                {children}
+            </Container>
         </main>
     );
 };
