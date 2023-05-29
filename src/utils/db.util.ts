@@ -1,4 +1,4 @@
-export const BOOKS_DATA: ReadonlyArray<IBook> = [
+export const BOOKS_DATA = [
     {
         id: 1,
         name: "An Italian Holiday",

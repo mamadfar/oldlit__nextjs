@@ -3,14 +3,14 @@ import {Book, BookImage} from "@/components";
 
 const Home = async () => {
 
-    const {data} = await getBooksService();
-    const books = data.results;
+    const {data: books} = await getBooksService();
+    // const books = data.results;
 
     return (
-        <section className="flex gap-10">
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
-                {books.map(({id, name, author, imageUrl, price}) => (
-                    <Book key={id} name={name} author={author} imageUrl={imageUrl} price={price}/>
+        <section>
+            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 mx-auto">
+                {books.map(({ISBN, title, author, image, price}) => (
+                    <Book key={ISBN} ISBN={ISBN} title={title} author={author} image={image} price={price}/>
                 ))}
             </div>
         </section>

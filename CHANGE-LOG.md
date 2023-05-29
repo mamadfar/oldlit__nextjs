@@ -4,10 +4,20 @@
 
 | Version            |
 |:-------------------|
+| [`0.4.0`](#v0.4.0) |
 | [`0.3.0`](#v0.3.0) |
 | [`0.2.0`](#v0.2.0) |
 | [`0.1.0`](#v0.1.0) |
 
+
+### <a id="v0.4.0"/>`0.4.0`
+
+- Added [`book intercepting route`](./src/app/(.)books) to the app.
+- Fixed some issues with [`DarkMode`](./src/components/layout/DarkMode.tsx)
+- Changed the API fake data URL to [apiary](https://bookstore.docs.apiary.io/)
+- Complete the [book page](./src/app/books/%5BbookId%5D/page.tsx)
+- Removed `tw-elements` and added `Ant Design`
+- Added [book service](./src/services/books.service.ts) to get the book details
 
 ### <a id="v0.3.0"/>`0.3.0`
 

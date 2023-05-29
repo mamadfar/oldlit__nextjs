@@ -7,6 +7,12 @@ body {
   margin-inline: auto;
 }
 
+@layer components {
+  .button {
+    @apply border px-5 md:px-10 py-2.5 rounded font-semibold transition duration-200 ease-out;
+  }
+}
+
 //:root {
 //  --foreground-rgb: 0, 0, 0;
 //  --background-start-rgb: 214, 219, 220;

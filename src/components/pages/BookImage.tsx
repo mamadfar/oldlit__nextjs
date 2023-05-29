@@ -3,11 +3,12 @@
 import {FC, useState} from 'react';
 import Image from "next/image";
 
-interface IBookImageProps extends Pick<IBook, "name" | "imageUrl"> {
+interface IBookImageProps extends Pick<IBook, "title" | "image"> {
     fill?: boolean;
+    className?: string;
 }
 
-const BookImage:FC<IBookImageProps> = ({name, imageUrl, fill}) => {
+const BookImage:FC<IBookImageProps> = ({title, image, fill, className}) => {
 
     const [loading, setLoading] = useState(true);
 
@@ -15,14 +16,14 @@ const BookImage:FC<IBookImageProps> = ({name, imageUrl, fill}) => {
         <>
             {fill ? (
                 <Image
-                    src={imageUrl} alt={name} fill={fill}
-                    className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${loading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
+                    src={image} alt={title} fill={fill}
+                    className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${loading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"} ${className ?? ""}`}
                     onLoadingComplete={() => setLoading(false)}
                 />
             ) : (
                 <Image
-                    src={imageUrl} alt={name} width={400} height={1000}
-                    className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${loading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
+                    src={image} alt={title} width={200} height={400}
+                    className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${loading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"} ${className ?? ""}`}
                     onLoadingComplete={() => setLoading(false)}
                 />
             )}

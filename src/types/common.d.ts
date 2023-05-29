@@ -1,3 +1,3 @@
-interface IResponse<T> {
-    results: T;
+interface IBookResponse<T> {
+    book: T;
 }

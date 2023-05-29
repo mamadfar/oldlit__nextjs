@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // * base url to set the request api url
-// axios.defaults.baseURL = BASE_URL;
+axios.defaults.baseURL = "https://private-72d778-bookstore.apiary-mock.com";
 
 // * request
 axios.interceptors.request.use(

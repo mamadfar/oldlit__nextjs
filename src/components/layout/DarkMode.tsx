@@ -5,8 +5,8 @@ import {BsFillMoonFill, BsFillSunFill} from "react-icons/bs";
 
 const DarkMode = () => {
 
-    const [userTheme, setUserTheme] = useState(localStorage.getItem("theme") || null);
-    const [systemTheme, setSystemTheme] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const [userTheme, setUserTheme] = useState<string | null>(null);
+    const [systemTheme, setSystemTheme] = useState<boolean>(false);
 
     // * Handle switch theme
     const themeSwitch = () => {
@@ -20,6 +20,12 @@ const DarkMode = () => {
             setUserTheme("dark");
         }
     }
+
+    // * Initial user theme based on localStorage
+    useEffect(() => {
+        if (localStorage.getItem("theme")) setUserTheme(localStorage.getItem("theme"))
+    }, []);
+
 
     // * Initial theme check
     useEffect(() => {
@@ -37,7 +43,7 @@ const DarkMode = () => {
     }, [userTheme, systemTheme]);
 
     return (
-        <div onClick={themeSwitch} className="absolute right-5 bottom-5 bg-black dark:bg-white p-2 sm:p-3 rounded-full cursor-pointer">
+        <div onClick={themeSwitch} className="fixed right-3 sm:right-5 bottom-3 sm:bottom-5 bg-black dark:bg-white p-3 rounded-full cursor-pointer">
             {(userTheme === "dark") ? (
                 <BsFillSunFill className="dark:text-black"/>
             ) : (

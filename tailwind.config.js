@@ -9,5 +9,8 @@ module.exports = {
     extend: {},
   },
   darkMode: "class",
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [],
+  corePlugins: {
+    preflight: true  // false = Disable tailwind default style
+  }
 }
