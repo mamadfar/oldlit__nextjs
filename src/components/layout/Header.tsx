@@ -2,13 +2,15 @@ import Link from "next/link";
 import {AiOutlineUser} from "react-icons/ai";
 import {FaFacebookF, FaInstagram, FaTwitter} from "react-icons/fa";
 import {BsSearch} from "react-icons/bs";
-import {ActiveLink, Container} from "@/components";
+import {ActiveLink, Container, Logo} from "@/components";
 
 const Header = () => {
     return (
         <header>
-            <div className="bg-black dark:bg-white text-white dark:text-black border-b-black dark:border-b-white text-[11px] tracking-wider">
-                <Container className="flex flex-col sm:flex-row items-center sm:justify-between space-y-2 sm:space-y-0 py-2 px-2 sm:px-0">
+            <div
+                className="bg-black dark:bg-white text-white dark:text-black border-b-black dark:border-b-white text-[11px] tracking-wider">
+                <Container
+                    className="flex flex-col sm:flex-row items-center sm:justify-between space-y-2 sm:space-y-0 py-2 px-2 sm:px-0">
                     <div className="flex-1 space-x-7">
                         <a href="mailto:m.sabah.farhadi@gmail.com"
                            className="hover:underline">m.sabah.farhadi@gmail.com</a>
@@ -35,17 +37,21 @@ const Header = () => {
             </div>
             <Container>
                 <nav className="flex items-center dark:text-white">
-                    <Link href="/" className="mr-9">LOGO</Link>
+                    <Logo/>
                     <ul className="flex h-20">
                         <li className="flex h-full">
-                            <ActiveLink href="/" linkClass="flex items-end h-full px-4 pb-3" activeClass="bg-red-500 text-white">Home</ActiveLink>
+                            <ActiveLink href="/" linkClass="flex items-end h-full px-4 pb-3"
+                                        activeClass="bg-red-500 text-white">Home</ActiveLink>
                         </li>
                         <li className="flex h-full">
-                            <ActiveLink href="/books" linkClass="flex items-end h-full px-4 pb-3" activeClass="bg-red-500 text-white">Books</ActiveLink>
+                            <ActiveLink href="/books" linkClass="flex items-end h-full px-4 pb-3"
+                                        activeClass="bg-red-600 text-white">Books</ActiveLink>
                         </li>
                     </ul>
                     <div className="ml-auto">
-                        <BsSearch className="w-5 h-5 cursor-pointer"/>
+                        <Link href="/search">
+                            <BsSearch className="w-5 h-5 cursor-pointer"/>
+                        </Link>
                     </div>
                 </nav>
             </Container>

@@ -4,12 +4,22 @@
 
 | Version            |
 |:-------------------|
+| [`0.5.0`](#v0.5.0) |
 | [`0.4.1`](#v0.4.1) |
 | [`0.4.0`](#v0.4.0) |
 | [`0.3.0`](#v0.3.0) |
 | [`0.2.0`](#v0.2.0) |
 | [`0.1.0`](#v0.1.0) |
 
+
+### <a id="v0.5.0"/>`0.5.0`
+
+- Added `React Query` to the app
+- Completed the [`Search`](./src/app/(app)/search/page.tsx) page with search functionality
+- Completed the [`Books`](./src/app/(app)/books/page.tsx) page
+- Added [`Next Progressbar`](./src/components/layout/ProgressBarProvider.tsx) to the app
+- Added 2 sections to show the `premium` and `regular` books
+- Updated `Next` and `antd` packages
 
 ### <a id="v0.4.1"/>`0.4.1`
 

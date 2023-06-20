@@ -1,10 +1,9 @@
+import {Book} from "@/components";
 import {getBooksService} from "@/services/books.service";
-import {Book, BookImage} from "@/components";
 
-const Home = async () => {
+const Books = async () => {
 
     const {data: books} = await getBooksService();
-    // const books = data.results;
 
     return (
         <section>
@@ -14,7 +13,7 @@ const Home = async () => {
                 ))}
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Home;
+export default Books;

@@ -6,7 +6,7 @@ interface IContainerProps extends HTMLAttributes<HTMLDivElement>{
 
 const Container:FC<IContainerProps> = ({children, className, ...props}) => {
     return (
-        <section className={`w-full sm:w-[98%] lg:w-[95%] mx-auto ${className ?? ""}`} {...props}>
+        <section className={`w-full h-auto sm:w-[98%] lg:w-[95%] mx-auto ${className ?? ""}`} {...props}>
             {children}
         </section>
     );

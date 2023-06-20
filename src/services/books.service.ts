@@ -1,4 +1,5 @@
 import API from "@/config/API";
+import {AxiosResponse} from "axios";
 
 export const getBooksService = () => {
         return API.get<ReadonlyArray<IBook>>("/data/books");

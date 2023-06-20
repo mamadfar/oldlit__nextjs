@@ -7,8 +7,8 @@ interface IContentProps {
 
 const Content:FC<IContentProps> = ({children}) => {
     return (
-        <main className="dark:text-white">
-            <Container className="py-3">
+        <main className="dark:text-white flex-1 flex">
+            <Container className="py-3 flex-1">
                 {children}
             </Container>
         </main>

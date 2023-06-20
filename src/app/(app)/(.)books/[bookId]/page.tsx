@@ -5,12 +5,13 @@ import {Modal} from "antd";
 import {useParams, useRouter} from "next/navigation";
 import {getBookService} from "@/services/books.service";
 import {BookImage} from "@/components";
+import {useQuery} from "@tanstack/react-query";
 
 const BookModal = () => {
 
     const [modalOpen, setModalOpen] = useState(true);
-    const [isLoading, setIsLoading] = useState(false);
-    const [book, setBook] = useState<IBook | null>(null);
+    // const [isLoading, setIsLoading] = useState(false);
+    // const [book, setBook] = useState<IBook | null>(null);
 
     const {bookId} = useParams();
     const router = useRouter();
@@ -20,23 +21,29 @@ const BookModal = () => {
         router.back();
     }
 
-    const getBook = async (signal: AbortSignal) => {
+    const getBook = async (id: number | string, signal?: AbortSignal): Promise<IBook> => {
         try {
-            setIsLoading(true);
-            const {data} = await getBookService(bookId, signal);
-            setBook(data.book);
-            setIsLoading(false);
-        } catch (e) {
-            setIsLoading(false);
+            // setIsLoading(true);
+            const {data: {book}} = await getBookService(id, signal);
+            return book;
+            // setBook(data.book);
+            // setIsLoading(false);
+        } catch (e: any) {
+            // setIsLoading(false);
             return e;
         }
     }
 
-    useEffect(() => {
-        const controller = new AbortController();
-        void getBook(controller.signal);
-        return () => controller.abort("User canceled the request.");
-    }, [])
+    const {data: book, isLoading} = useQuery({
+        queryKey: ["book", bookId],
+        queryFn: ({queryKey, signal}) => getBook(queryKey[1], signal)
+    });
+
+    // useEffect(() => {
+    //     const controller = new AbortController();
+    //     void getBook(controller.signal);
+    //     return () => controller.abort("User canceled the request.");
+    // }, [])
 
     return (
         <Modal
