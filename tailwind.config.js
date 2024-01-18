@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  darkMode: "class",
+  darkMode: 'class',
   plugins: [],
   corePlugins: {
-    preflight: true  // false = Disable tailwind default style
-  }
+    preflight: true, // false = Disable tailwind default style
+  },
 }

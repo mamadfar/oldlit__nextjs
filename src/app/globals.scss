@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  max-width: 2000px;
+  margin-inline: auto;
+    font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .button {
+    @apply rounded border px-5 py-2.5 font-semibold transition duration-200 ease-out md:px-10;
+  }
+}
+
+.login-modal-content button.ant-modal-close {
+  top: 15px !important;
+  color: #fff !important;
+}

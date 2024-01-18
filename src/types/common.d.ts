@@ -1,5 +1,5 @@
 interface IBookResponse<T> {
-    book: T;
+  book: T
 }
 
-type IPreferColorScheme = "light" | "dark";
+type IPreferColorScheme = 'light' | 'dark'

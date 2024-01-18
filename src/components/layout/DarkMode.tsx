@@ -1,21 +1,23 @@
-"use client";
+'use client'
 
-import {BsFillMoonFill, BsFillSunFill} from "react-icons/bs";
-import useDarkMode from "@/hooks/useDarkMode";
+import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
+import useDarkMode from '@/hooks/useDarkMode'
 
 const DarkMode = () => {
+  const { themeSwitch, userTheme } = useDarkMode()
 
-    const {themeSwitch, userTheme} = useDarkMode();
+  return (
+    <div
+      onClick={themeSwitch}
+      className='fixed bottom-3 right-3 cursor-pointer rounded-full bg-black p-3 sm:bottom-5 sm:right-5 dark:bg-white'
+    >
+      {userTheme === 'dark' ? (
+        <BsFillSunFill className='dark:text-black' />
+      ) : (
+        <BsFillMoonFill className='text-white' />
+      )}
+    </div>
+  )
+}
 
-    return (
-        <div onClick={themeSwitch} className="fixed right-3 sm:right-5 bottom-3 sm:bottom-5 bg-black dark:bg-white p-3 rounded-full cursor-pointer">
-            {(userTheme === "dark") ? (
-                <BsFillSunFill className="dark:text-black"/>
-            ) : (
-                <BsFillMoonFill className="text-white"/>
-            )}
-        </div>
-    );
-};
-
-export default DarkMode;
+export default DarkMode

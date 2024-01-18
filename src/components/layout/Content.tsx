@@ -1,18 +1,16 @@
-import {FC, ReactNode} from 'react';
-import {Container} from "@/components";
+import { FC, ReactNode } from 'react'
+import { Container } from '@/components'
 
 interface IContentProps {
-    children: ReactNode;
+  children: ReactNode
 }
 
-const Content:FC<IContentProps> = ({children}) => {
-    return (
-        <main className="dark:text-white flex-1 flex">
-            <Container className="py-3 flex-1">
-                {children}
-            </Container>
-        </main>
-    );
-};
+const Content: FC<IContentProps> = ({ children }) => {
+  return (
+    <main className='flex flex-1 dark:text-white'>
+      <Container className='flex-1 py-3'>{children}</Container>
+    </main>
+  )
+}
 
-export default Content;
+export default Content

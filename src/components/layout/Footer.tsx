@@ -1,14 +1,14 @@
-import React from 'react';
-import {Container} from "@/components";
+import React from 'react'
+import { Container } from '@/components'
 
 const Footer = () => {
-    return (
-        <footer className="mt-auto my-2">
-            <Container className="text-center mt-5">
-                <span className="text-red-600">❤</span>
-            </Container>
-        </footer>
-    );
-};
+  return (
+    <footer className='my-2 mt-auto'>
+      <Container className='mt-5 text-center'>
+        <span className='text-red-600'>❤</span>
+      </Container>
+    </footer>
+  )
+}
 
-export default Footer;
+export default Footer
