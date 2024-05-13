@@ -1,10 +1,10 @@
 'use client'
 
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import Modal from '@/app/@modal/modal'
 import {PiUserRectangleFill} from 'react-icons/pi'
 import {LoginState, RegisterState} from "@/components";
-import {AuthState_Type} from "@/types/auth.type";
+import {AuthState_Type} from "@/types/Auth.type";
 
 const Login = () => {
     const [state, setState] = useState<AuthState_Type>('LOGIN')

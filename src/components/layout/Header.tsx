@@ -2,7 +2,7 @@ import Link from 'next/link'
 import {AiOutlineUser} from 'react-icons/ai'
 import {FaFacebookF, FaInstagram, FaTwitter} from 'react-icons/fa'
 import {BsSearch} from 'react-icons/bs'
-import {ActiveLink, Container, Logo} from '@/components'
+import {ActiveLink, Breadcrumb, Container, Logo} from '@/components'
 import LoginChecker from "@/components/utils/LoginChecker";
 
 const Header = () => {
@@ -69,6 +69,7 @@ const Header = () => {
                     </div>
                 </nav>
             </Container>
+            <Breadcrumb/>
         </header>
     )
 }

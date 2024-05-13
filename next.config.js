@@ -3,14 +3,9 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'demo.wpthemego.com',
-        port: '',
-      },
-      {
         protocol: 'http',
-        hostname: 's.s-bol.com',
-        port: '',
+        hostname: '38.242.213.151',
+        port: '3000',
       },
     ],
   },

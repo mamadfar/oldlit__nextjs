@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import {Button, Login} from "@/components";
-import {AuthState_Type} from "@/types/auth.type";
+import {AuthState_Type} from "@/types/Auth.type";
 
 interface ILoginStateProps {
     setState: (state: AuthState_Type) => void

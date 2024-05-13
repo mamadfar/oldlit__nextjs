@@ -1,16 +1,17 @@
 import Cookies from "js-cookie";
-import { OLD_LIT_U } from "@/config";
+import {OLD_LIT_AT, OLD_LIT_RT} from "@/config";
 import {useRouter} from "next/navigation";
 
 const useAuth = () => {
-  const userJson = Cookies.get(OLD_LIT_U);
+  const userJson = Cookies.get(OLD_LIT_AT);
   const user = userJson ? JSON.parse(userJson) : "";
   const isAuthenticated = !!user;
 
   const router = useRouter();
 
   const logout = () => {
-    Cookies.remove(OLD_LIT_U);
+    Cookies.remove(OLD_LIT_AT);
+    Cookies.remove(OLD_LIT_RT);
     router.replace("/login");
   };
 

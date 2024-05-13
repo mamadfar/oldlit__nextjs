@@ -1,21 +1,14 @@
 import { Book } from '@/components'
-import { getBooksService } from '@/services/books.service'
+import { GetBooksService } from '@/services/Book.service'
 
 const Books = async () => {
-  const { data: books } = await getBooksService()
+  const { data } = await GetBooksService()
 
   return (
     <section>
       <div className='mx-auto grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
-        {books.map(({ ISBN, title, author, image, price }) => (
-          <Book
-            key={ISBN}
-            ISBN={ISBN}
-            title={title}
-            author={author}
-            image={image}
-            price={price}
-          />
+        {data.books.map(({name, price, user, isPremium,images, id, description}) => (
+          <Book id={id} name={name} price={price} user={user} isPremium={isPremium} images={images} description={description} />
         ))}
       </div>
     </section>

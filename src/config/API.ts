@@ -1,28 +1,48 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import {SilentLoginService} from "@/services/Auth.service";
+import {OLD_LIT_AT, OLD_LIT_RT} from "@/config/index";
+import {AuthCookieSetter} from "@/utils";
 
 // * base url to set the request api url
-axios.defaults.baseURL = 'https://private-72d778-bookstore.apiary-mock.com'
+axios.defaults.baseURL = 'http://38.242.213.151:3000/api'
 
 //? request
 axios.interceptors.request.use(
-  async config => {
+  config => {
     if (typeof window !== 'undefined') {
-      const token = Cookies.get('_csrf')
-      config.headers['Content-Type'] = 'application/json'
+      const token = Cookies.get(OLD_LIT_AT)
+      // config.headers['Content-Type'] = 'application/json'
       config.headers['Accept'] = '*/*'
       config.headers['Accept-Language'] = 'en'
-      config.headers['Authorization'] = `Bearer ${token}`
+      token && (config.headers['Authorization'] = `Bearer ${JSON.parse(token)}`)
     }
     return config
   },
-  err => {
-    if (err) {
-      console.error('Something went wrong.')
-    }
-    return Promise.reject(err)
-  },
+    error => Promise.reject(error),
 )
+
+axios.interceptors.response.use(
+    res => res,
+    async error => {
+        if (error.response && error.response.status === 401) {
+            const refreshToken = Cookies.get(OLD_LIT_RT);
+            if (refreshToken) {
+                try {
+                    const { data } = await SilentLoginService(JSON.parse(refreshToken));
+                    AuthCookieSetter(data);
+                    // Retry the original request
+                    const originalRequest = error.config;
+                    originalRequest.headers['Authorization'] = `Bearer ${data.accessToken}`;
+                    return axios(originalRequest);
+                } catch (e) {
+                    console.log('Token refresh failed: ', e);
+                }
+            }
+        }
+        return Promise.reject(error);
+    },
+);
 
 //? response
 axios.interceptors.response.use(

@@ -1,27 +1,28 @@
 import {create} from "zustand";
 import {subscribeWithSelector} from "zustand/middleware";
 import Cookies from "js-cookie";
-import {Is_Logged_In, OLD_LIT_U} from "@/config";
-import {RegisterStateForm_Type} from "@/types/auth.type";
+import {OLD_LIT_AT, OLD_LIT_RT} from "@/config";
+import {RegisterStateForm_Type} from "@/types/Auth.type";
 
 interface IState {
     isAuthenticated: boolean;
-    isLoggedIn: boolean;
     user: RegisterStateForm_Type | null;
 }
 
 interface IActions {
-    setIsLoggedIn: (isLoggedIn: boolean) => void;
+    setIsAuthenticated: (isAuthenticated: boolean) => void;
     logout: () => void;
 }
+
+const cookie = Cookies.get(OLD_LIT_AT) || '{}';
 export const useAuthStore = create<IState & IActions>()(subscribeWithSelector((set) => ({
-    isAuthenticated: false,
-    isLoggedIn: Cookies.get(Is_Logged_In) ? JSON.parse(Cookies.get(Is_Logged_In) as string) : false,
-    user: Cookies.get(OLD_LIT_U) ? JSON.parse(Cookies.get(OLD_LIT_U) as string) : null,
-    setIsLoggedIn: isLoggedIn => set(() => ({isLoggedIn})),
+    isAuthenticated: !!(Cookies.get(OLD_LIT_AT) && Cookies.get(OLD_LIT_RT)),
+    user: cookie ? JSON.parse(cookie) : null,
+    setIsAuthenticated: isAuthenticated => set(() => ({isAuthenticated})),
     logout: () => set(() => {
-        Cookies.set(Is_Logged_In, 'false')
-        return {isLoggedIn: false}
+        Cookies.remove(OLD_LIT_AT)
+        Cookies.remove(OLD_LIT_RT)
+        return {isAuthenticated: false}
     })
 })));
 

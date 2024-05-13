@@ -5,7 +5,7 @@ import {Button, Register} from "@/components";
 import {AuthState_Type, RegisterStateForm_Type} from "@/types/auth.type";
 import {MdOutlineEmail} from "react-icons/md";
 import Cookies from "js-cookie";
-import {OLD_LIT_U} from "@/config";
+import {OLD_LIT_AT} from "@/config";
 import {useRouter} from "next/navigation";
 
 interface IRegisterStateProps {
