@@ -10,7 +10,6 @@ export { default as Button } from '@/components/shared/Button'
 
 export { default as BookCarousel } from './pages/book/BookCarousel'
 export { default as BookImage } from './pages/book/BookImage'
-export { default as Books } from './pages/book/Books'
 export { default as Book } from './pages/book/Book'
 export {default as PremiumSubscription} from './pages/book/PremiumSubscription'
 
