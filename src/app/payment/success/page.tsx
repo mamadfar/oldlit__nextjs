@@ -22,7 +22,7 @@ const SuccessPayment = () => {
                 subTitle={(<p>Now you can check your book has <b>Premium</b> tag.</p>)}
                 className=""
                 extra={[
-                    <Link href={'/'}>
+                    <Link key={'/'} href={'/'}>
                         <Button>Your Book</Button>
                     </Link>,
                 ]}
