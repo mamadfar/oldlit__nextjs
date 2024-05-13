@@ -1,12 +1,6 @@
-import {FC, FormEvent} from 'react';
-import {Input} from "antd";
-import {FaLock, FaUserPlus} from "react-icons/fa";
+import {FC} from 'react';
 import {Button, Register} from "@/components";
-import {AuthState_Type, RegisterStateForm_Type} from "@/types/Auth.type";
-import {MdOutlineEmail} from "react-icons/md";
-import Cookies from "js-cookie";
-import {OLD_LIT_AT} from "@/config";
-import {useRouter} from "next/navigation";
+import {AuthState_Type} from "@/types/Auth.type";
 
 interface IRegisterStateProps {
     setState: (state: AuthState_Type) => void

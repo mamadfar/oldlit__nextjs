@@ -69,7 +69,6 @@ const Header = () => {
                     </div>
                 </nav>
             </Container>
-            <Breadcrumb/>
         </header>
     )
 }

@@ -5,18 +5,13 @@ import {Input, message} from "antd";
 import {MdOutlineEmail} from "react-icons/md";
 import {FaLock, FaUserPlus} from "react-icons/fa";
 import {Button} from "@/components";
-// import {useRouter} from "next/navigation";
 import {RegisterStateForm_Type} from "@/types/Auth.type";
-// import Cookies from "js-cookie";
-// import {OLD_LIT_AT, OLD_LIT_RT} from "@/config";
 import {useMutation} from "@tanstack/react-query";
 import {RegisterService} from "@/services/Auth.service";
 
 const Register = () => {
 
     const [messageApi, contextHolder] = message.useMessage();
-
-    // const router = useRouter()
 
     const {mutate, data, isSuccess, isPending} = useMutation({mutationKey: ['register'], mutationFn: async (payload: RegisterStateForm_Type) => RegisterService(payload)})
 

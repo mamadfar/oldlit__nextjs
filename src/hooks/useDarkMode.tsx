@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import {IPreferColorScheme} from "@/types/common";
 
 const useDarkMode = () => {
   const [userTheme, setUserTheme] = useState<IPreferColorScheme | null>(null)

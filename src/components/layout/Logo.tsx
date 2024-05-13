@@ -2,19 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { DarkLogo, WhiteLogo } from '@/assets/images'
-import useDarkMode from '@/hooks/useDarkMode'
-import { useEffect, useState } from 'react'
+import { DarkLogo } from '@/assets/images'
 
 const Logo = () => {
-  // Todo: fix the change logo
-
-  // const [isDarkMode, setIsDarkMode] = useState(false);
-  //
-  // useEffect(() => {
-  //     document.documentElement.classList.contains("dark") ? setIsDarkMode(true) : setIsDarkMode(false);
-  //     console.log(localStorage.getItem("theme"))
-  // }, []);
 
   return (
     <Link href='/' className='mr-9'>
