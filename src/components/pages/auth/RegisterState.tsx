@@ -2,7 +2,7 @@ import {FC, FormEvent} from 'react';
 import {Input} from "antd";
 import {FaLock, FaUserPlus} from "react-icons/fa";
 import {Button, Register} from "@/components";
-import {AuthState_Type, RegisterStateForm_Type} from "@/types/auth.type";
+import {AuthState_Type, RegisterStateForm_Type} from "@/types/Auth.type";
 import {MdOutlineEmail} from "react-icons/md";
 import Cookies from "js-cookie";
 import {OLD_LIT_AT} from "@/config";
