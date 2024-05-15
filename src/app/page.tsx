@@ -13,7 +13,7 @@ const Home = async () => {
                 <h1 className='mb-5 mt-2 border-b pb-2 text-center text-4xl font-bold tracking-widest sm:text-5xl'>
                     <span className='text-red-600'>Trea</span>sures
                 </h1>
-                <div className='mx-auto grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
+                <div className='mx-auto grid grid-cols-1 justify-center gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
                     {data.books.filter(book => book.isPremium && book.isActive).map((book) => (
                         <Book
                             key={book.id}

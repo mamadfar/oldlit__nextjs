@@ -33,7 +33,7 @@ const Book: FC<Pick<IBook, 'id' | 'name' | 'description' | 'price' | 'user' | 'i
             <div className='relative flex flex-col items-center text-center'>
                 <small className='opacity-80'>{(user.firstName ?? '-') + ' ' + (user.lastName ?? '-')}</small>
                 <b className='text-lg'>{name}</b>
-                <small className='text-red-600'>${price}</small>
+                <small className='text-red-600'>{price} HUF</small>
             </div>
         </article>
     )

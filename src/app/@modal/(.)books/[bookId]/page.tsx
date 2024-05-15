@@ -30,7 +30,7 @@ const BookModal = (props: any) => {
                             <div className='flex flex-1 flex-col'>
                                 <div className='flex-1'>
                                     <p className='text-sm font-medium text-red-600'>
-                                        ${book.price}
+                                        {book.price} HUF
                                     </p>
                                     <p className='line-clamp-5 text-sm'>{book.description}</p>
                                 </div>

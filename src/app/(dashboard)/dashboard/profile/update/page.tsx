@@ -3,8 +3,7 @@
 import {GetUserService, UpdateUserService} from "@/services/User.service";
 import {IUpdateUser} from "@/types/User.type";
 import {useMutation, useQuery} from "@tanstack/react-query";
-import {Button, Form, Input, message, Select, Upload} from "antd";
-import {AiOutlineCloudUpload} from "react-icons/ai";
+import {Button, Form, Input, message} from "antd";
 import React from "react";
 
 const Profile = () => {
@@ -35,14 +34,6 @@ const Profile = () => {
 
     const onFinish = (values: any) => {
         updateMutate(values)
-        //     event.preventDefault();
-        //     const updatedUser: IUpdateUser = {
-        //         firstName: (event.target as any)['firstName'].value,
-        //         lastName: (event.target as any)['lastName'].value
-        //     };
-        //     UpdateUserService(updatedUser).then(response => {
-        //         setUser('');
-        //     });
     };
 
     return (

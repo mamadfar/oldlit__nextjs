@@ -16,7 +16,7 @@ const Book = async ({ params }: { params: { bookId: number } }) => {
                   <div className='space-y-2 pb-8'>
                       <h1 className='text-2xl font-bold md:text-4xl'>{book.name}</h1>
                       <h2 className='text-xl font-bold text-red-600/70 md:text-3xl'>
-                          ${book.price}
+                          {book.price} HUF
                       </h2>
                   </div>
                   <div className='pt-8'>
