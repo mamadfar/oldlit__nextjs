@@ -66,8 +66,6 @@ const CreateBook: FC = () => {
     const {mutate: categoriesMutate, data: categoriesData, isPending: isCategoriesPending} = useMutation({mutationKey: ['categories'], mutationFn: CategoriesService})
 
     const onFinish = (values: ICreateBook) => {
-        console.log('Received values of form: ', values);
-        console.log('Received values of form: ', values.images)
         // @ts-ignore
         values.images = values.images.fileList.map(image => image.name)
         createBookMutate(values);
