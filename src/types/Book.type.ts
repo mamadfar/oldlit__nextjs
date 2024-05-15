@@ -44,6 +44,8 @@ export interface ISingleBook {
   images: string[];
   price: number;
   hitCounter: number;
+  isPremium: true,
+  isSold: false,
   categories: Category[];
   user: IUserGeneral;
   updatedAt: string;

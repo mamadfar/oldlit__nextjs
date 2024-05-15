@@ -2,11 +2,13 @@ import {Book} from '@/components'
 import {GetBooksService} from '@/services/Book.service'
 import {ImBookmark} from 'react-icons/im'
 
+export const revalidate = 1;
+
 const Home = async () => {
     const {data} = await GetBooksService()
 
     return (
-        <section>
+        <section className="px-4">
             <div className='relative mb-16'>
                 <h1 className='mb-5 mt-2 border-b pb-2 text-center text-4xl font-bold tracking-widest sm:text-5xl'>
                     <span className='text-red-600'>Trea</span>sures

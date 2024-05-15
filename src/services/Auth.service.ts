@@ -4,7 +4,6 @@ import {ILoginResponse, LoginStateForm_Type, RegisterStateForm_Type} from "@/typ
 export const LoginService = (payload: LoginStateForm_Type) => {
     return API.post<ILoginResponse>(
         `/users/login`,
-        // `http://127.0.0.1:5000/users/login`,
         payload,
     )
 }

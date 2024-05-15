@@ -14,7 +14,7 @@ const Book: FC<Pick<IBook, 'id' | 'name' | 'description' | 'price' | 'user' | 'i
                                                                                                              isPremium,
                                                                                                          }) => {
     return (
-        <article className='flex flex-col items-center space-y-2 relative'>
+        <article className='flex flex-col items-center space-y-2 relative max-w-60'>
             <div className='group/image relative h-72 w-full'>
                 <BookImage
                     name={name}

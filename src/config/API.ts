@@ -5,7 +5,7 @@ import {OLD_LIT_AT, OLD_LIT_RT} from "@/config/index";
 import {AuthCookieSetter} from "@/utils";
 
 // * base url to set the request api url
-axios.defaults.baseURL = 'http://38.242.213.151:3000/api'
+axios.defaults.baseURL = 'https://api.oldlit.yalchin.info/api'
 
 //? request
 axios.interceptors.request.use(
