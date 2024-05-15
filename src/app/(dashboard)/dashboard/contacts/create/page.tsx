@@ -1,15 +1,30 @@
 'use client'
 
 import React, {FC} from 'react';
-import {Form, Input, Button, Checkbox} from 'antd';
+import {Form, Input, Button, Checkbox, message} from 'antd';
 import {ICreateContact} from "@/types/Contact.type";
 import {useMutation} from "@tanstack/react-query";
 import {CreateContactService} from "@/services/Contact.service";
 
 const CreateContact: FC = () => {
 
+    const [messageApi, contextHolder] = message.useMessage();
+    const [form] = Form.useForm();
     const {mutate: createContactMutate} = useMutation({mutationKey: ['createContact'], mutationFn: async (payload: ICreateContact) => {
-            const {data} = await CreateContactService(payload);
+            messageApi.open({
+                key: 'updatable',
+                type: 'loading',
+                content: 'Loading...',
+            });
+            const {data, status} = await CreateContactService(payload);
+            if (status === 200) {
+                messageApi.success({
+                    content: 'Contact Created',
+                    duration: 2,
+                    key: 'updatable',
+                });
+                form.resetFields();
+            }
             return data;
         }});
 
@@ -23,6 +38,7 @@ const CreateContact: FC = () => {
             <div className="w-full max-w-md">
                 <p className="text-2xl mb-3">Create Contact</p>
                 <Form
+                    form={form}
                     name="create-contact"
                     onFinish={onFinish}
                     autoComplete="off"

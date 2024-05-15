@@ -85,7 +85,7 @@ const PremiumDrawer: FC<{ open: boolean, setOpen: (open: boolean) => void }> = (
                                         <div className="space-y-5">
                                             <div className="font-bold text-xl mb-2">{premiumPackage.name}</div>
                                             <p className="text-base">
-                                                ${premiumPackage.price}
+                                                {premiumPackage.price} HUF
                                             </p>
                                             <p>{premiumPackage.description}</p>
                                         </div>
