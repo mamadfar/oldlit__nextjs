@@ -36,8 +36,13 @@ const BookModal = (props: any) => {
                                     </p>
                                     <p className='line-clamp-5 text-sm'>{book.description}</p>
                                     <div className="mt-auto mb-4">
-                                        <small className="text-xs">Contact: <Link target="_blank" href={`mailto:${book.user.email}`}
-                                                                               className="text-red-300 underline">{book.user.email}</Link></small>
+                                        <div className="flex flex-col gap-2">
+                                            <p className="border-b w-fit">Contact</p>
+                                            <small className="text-xs"><b>Address:</b> {book.contact.fromAddress}
+                                            </small>
+                                            <small className="text-xs"><b>Phone Number:</b> {book.contact.phoneNumber}
+                                            </small>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className='space-y-3 text-sm'>

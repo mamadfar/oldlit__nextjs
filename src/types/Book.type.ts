@@ -48,6 +48,7 @@ export interface ISingleBook {
   isSold: false,
   categories: Category[];
   user: IUserGeneral;
+    contact: IContact;
   updatedAt: string;
   premiumEndsAt: string | null;
 }
